@@ -15,6 +15,15 @@ const config: Config = {
       fontFamily: {
         'sf-pro-text': ['var(--font-sf-pro-text)'],
       },
+      boxShadow: {
+        'elevation-10':
+          '0px 0px 0px 0.5px rgba(151, 151, 151, 0.30), 0px 2px 3px 0px rgba(0, 0, 0, 0.03);',
+      },
+      colors: {
+        neutral: {
+          200: '#e5e5ea',
+        },
+      },
     },
   },
   plugins: [],

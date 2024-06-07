@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { SFProText } from './ui/fonts/fonts'
+import { SFProText } from './static/fonts/fonts'
 
 export const metadata: Metadata = {
   title: 'Test assignment',
@@ -14,9 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${SFProText.className} text-base`}>
-      <body className={SFProText.variable}>
-        <div className="mx-auto my-0 max-w-[698px]">{children}</div>
-      </body>
+      <body className={SFProText.variable}>{children}</body>
     </html>
   )
 }
