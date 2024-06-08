@@ -23,6 +23,10 @@ const config: Config = {
         neutral: {
           200: '#e5e5ea',
         },
+        custom: {
+          dark: 'rgba(136, 136, 136, 0.30)',
+          neutral: 'rgba(255, 255, 255, 0.50)',
+        },
       },
     },
   },

@@ -1,12 +1,11 @@
 'use client'
 
-import Image from 'next/image'
 import { useState, FC, useRef } from 'react'
 import clsx from 'clsx'
 import { CSSTransition } from 'react-transition-group'
 
 import { useClickOutside } from '@/hooks/useClickOutside'
-import arrowDownIcon from '@/static/icons/arrow-down.svg'
+import ArrowDownIcon from '@/static/icons/arrow-down.svg'
 
 const duration = 150
 
@@ -48,17 +47,17 @@ export const Select: FC<SelectProps> = ({ options, value, onChange, className = 
     <div ref={clickRef} className="relative inline-flex w-full text-gray-700">
       <button
         type="button"
-        className={`focus:shadow-outline flex h-10 w-full min-w-28 items-center justify-between rounded-lg border px-5 text-base font-semibold placeholder-gray-600 ${className}`}
+        className={`focus:shadow-outline flex h-8 w-full min-w-28 items-center justify-between whitespace-nowrap rounded-lg border bg-white px-5 text-base font-semibold placeholder-gray-600 ${className}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{options.find((option) => option.value === value)?.label || 'Select an option'}</span>
-        <Image
-          src={arrowDownIcon}
-          alt="arrow down icon"
+        <span
           className={clsx('ml-1 transition-transform', {
             ['rotate-180']: isOpen,
           })}
-        />
+        >
+          <ArrowDownIcon />
+        </span>
       </button>
 
       <CSSTransition

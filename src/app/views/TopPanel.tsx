@@ -1,4 +1,5 @@
 'use client'
+
 import { FC, ReactNode, useState } from 'react'
 import { Select } from '@/components/Select'
 
@@ -23,13 +24,13 @@ export const TopPanel: FC<TopPanelProps> = ({ children }) => {
   }
 
   return (
-    <div className="flex rounded-2xl shadow-elevation-10">
+    <div className="flex rounded-2xl pl-4 shadow-elevation-10">
       {children}
       <Select
         options={options}
         value={option}
         onChange={handleSelectChange}
-        className="border-none pr-2"
+        className="!rounded-2xl border-none pr-2"
       />
     </div>
   )
