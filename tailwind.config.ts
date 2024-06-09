@@ -9,6 +9,9 @@ const config: Config = {
   theme: {
     colors: {
       primary: '#714eff',
+      brand: {
+        50: '#f0f4fd',
+      },
       dark: 'rgba(136, 136, 136, 0.30)',
       neutral: {
         100: 'rgba(255, 255, 255, 0.50)',
@@ -38,6 +41,12 @@ const config: Config = {
           '0.937rem',
           {
             lineHeight: '1.312rem',
+          },
+        ],
+        xl: [
+          '1.375rem',
+          {
+            lineHeight: '1.75rem',
           },
         ],
         '3xl': [

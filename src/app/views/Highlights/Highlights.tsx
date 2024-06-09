@@ -22,7 +22,7 @@ export const Highlights = () => {
         </div>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="mb-4 flex items-center gap-4">
         <Avatar src={avatar} />
         <div>
           <p className="font-semibold">Curated by Sandra</p>

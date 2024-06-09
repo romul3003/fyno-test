@@ -1,4 +1,5 @@
 import { Gallery } from '@/components/Gallery'
+import { Itinerary } from '@/components/Itinerary'
 
 import { TripInfo } from '@/views/TripInfo'
 import { Highlights } from '@/views/Highlights'
@@ -12,6 +13,7 @@ export default function Home() {
         <Gallery className="mb-7" />
         <TripInfo className="mb-7" />
         <Highlights />
+        <Itinerary className="py-6" />
       </div>
     </main>
   )

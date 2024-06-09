@@ -20,7 +20,7 @@ export const TripInfo: FC<TripInfoProps> = ({ className }) => {
       {data.map(({ title, text }) => (
         <TextBlock key={title} title={title} text={text} />
       ))}
-      <Link href="#itinerary" className="text-primary justify-self-end">
+      <Link href="#top-region" className="text-primary justify-self-end">
         View itinerary
       </Link>
     </section>
