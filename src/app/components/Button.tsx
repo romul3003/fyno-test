@@ -4,8 +4,8 @@ type ButtonColor = 'primary' | 'secondary' | 'neutral'
 
 const colors: Record<ButtonColor, string> = {
   primary: 'bg-white font-semibold',
-  secondary: 'bg-custom-dark backdrop-blur-md text-white',
-  neutral: 'bg-custom-neutral',
+  secondary: 'bg-dark backdrop-blur-md text-white',
+  neutral: 'bg-neutral-100',
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -25,7 +25,7 @@ export const Button: FC<ButtonProps> = ({
     <button
       {...rest}
       type={type}
-      className={`inline-flex h-8 items-center rounded-2xl pl-2 pr-3 shadow-elevation-10 ${colors[color]} ${className}`}
+      className={`inline-flex h-8 items-center rounded-2xl pl-2 pr-3 text-sm shadow-elevation-10 ${colors[color]} ${className}`}
     >
       {!!startIcon && <span className="mr-1">{startIcon}</span>}
       {children}

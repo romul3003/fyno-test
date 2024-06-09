@@ -7,6 +7,20 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      primary: '#714eff',
+      dark: 'rgba(136, 136, 136, 0.30)',
+      neutral: {
+        100: 'rgba(255, 255, 255, 0.50)',
+        200: '#e5e5ea',
+      },
+      label: {
+        secondary: 'rgba(60, 60, 67, 0.8)',
+        tertiary: 'rgba(60, 60, 67, 0.5)',
+      },
+      black: '#000',
+      white: '#fff',
+    },
     extend: {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -19,14 +33,13 @@ const config: Config = {
         'elevation-10':
           '0px 0px 0px 0.5px rgba(151, 151, 151, 0.30), 0px 2px 3px 0px rgba(0, 0, 0, 0.03);',
       },
-      colors: {
-        neutral: {
-          200: '#e5e5ea',
-        },
-        custom: {
-          dark: 'rgba(136, 136, 136, 0.30)',
-          neutral: 'rgba(255, 255, 255, 0.50)',
-        },
+      fontSize: {
+        sm: [
+          '0.937rem',
+          {
+            lineHeight: '1.312rem',
+          },
+        ],
       },
     },
   },

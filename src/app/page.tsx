@@ -4,6 +4,7 @@ import { TopPanel } from '@/views/TopPanel'
 import { Button } from '@/components/Button'
 import PlusIcon from '@/static/icons/plus.svg'
 import { Gallery } from '@/components/Gallery'
+import { TripInfo } from './views/TripInfo'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         </div>
 
         <Gallery className="mb-7" />
+        <TripInfo />
       </div>
     </main>
   )

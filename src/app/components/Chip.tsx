@@ -10,7 +10,7 @@ type ChipProps = {
 export const Chip: FC<ChipProps> = ({ className = '', children }) => {
   return (
     <div
-      className={`inline-flex h-8 items-center whitespace-nowrap bg-white px-5 text-center font-semibold ${className}`}
+      className={`inline-flex h-8 items-center whitespace-nowrap bg-white px-5 text-center text-sm font-semibold ${className}`}
     >
       {children}
     </div>

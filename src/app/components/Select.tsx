@@ -32,7 +32,7 @@ type SelectProps = {
 export const Select: FC<SelectProps> = ({ options, value, onChange, className = '' }) => {
   const [isOpen, setIsOpen] = useState(false)
   const clickRef = useRef<HTMLDivElement | null>(null)
-  const nodeRef = useRef<HTMLDivElement | null>(null)
+  const nodeRef = useRef<HTMLUListElement | null>(null)
 
   useClickOutside(clickRef, () => {
     setIsOpen(false)
@@ -47,7 +47,7 @@ export const Select: FC<SelectProps> = ({ options, value, onChange, className = 
     <div ref={clickRef} className="relative inline-flex w-full text-gray-700">
       <button
         type="button"
-        className={`focus:shadow-outline flex h-8 w-full min-w-28 items-center justify-between whitespace-nowrap rounded-lg border bg-white px-5 text-base font-semibold placeholder-gray-600 ${className}`}
+        className={`focus:shadow-outline flex h-8 w-full min-w-28 items-center justify-between whitespace-nowrap rounded-lg border bg-white px-5 text-sm font-semibold placeholder-gray-600 ${className}`}
         onClick={() => setIsOpen(!isOpen)}
       >
         <span>{options.find((option) => option.value === value)?.label || 'Select an option'}</span>
@@ -67,20 +67,20 @@ export const Select: FC<SelectProps> = ({ options, value, onChange, className = 
         classNames={classNames}
         unmountOnExit
       >
-        <div
+        <ul
           ref={nodeRef}
-          className="absolute top-full z-10 mt-1 max-h-48 w-full overflow-y-auto rounded-lg border bg-white shadow-lg"
+          className="absolute top-full z-10 mt-1 max-h-48 w-full overflow-y-auto rounded-lg bg-white shadow-elevation-10"
         >
           {options.map(({ value, label }) => (
-            <div
+            <li
               key={value}
-              className={`cursor-pointer px-4 py-2 hover:bg-gray-200 ${value === value ? 'bg-gray-100' : ''}`}
+              className={`cursor-pointer px-4 py-2 text-sm hover:bg-neutral-200 ${value === value ? 'bg-gray-100' : ''}`}
               onClick={() => handleSelect(value)}
             >
               {label}
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </CSSTransition>
     </div>
   )
