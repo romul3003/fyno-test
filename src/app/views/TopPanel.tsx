@@ -1,37 +1,21 @@
-'use client'
+import { Chip } from '@/components/Chip'
+import { Divider } from '@/components/Divider'
+import { Button } from '@/components/Button'
 
-import { FC, ReactNode, useState } from 'react'
-import { Select } from '@/components/Select'
+import { DaySelector } from '@/views/DaySelector'
 
-const options = [
-  { value: '5', label: '5 days' },
-  { value: '6', label: '6 days' },
-  { value: '7', label: '7 days' },
-  { value: '8', label: '8 days' },
-  { value: '9', label: '9 days' },
-  { value: '10', label: '10 days' },
-]
+import PlusIcon from '@/static/icons/plus.svg'
 
-type TopPanelProps = {
-  children: ReactNode
-}
-
-export const TopPanel: FC<TopPanelProps> = ({ children }) => {
-  const [option, setOption] = useState('7')
-
-  const handleSelectChange = (value: string) => {
-    setOption(value)
-  }
-
+export const TopPanel = () => {
   return (
-    <div className="flex rounded-2xl pl-4 shadow-elevation-10">
-      {children}
-      <Select
-        options={options}
-        value={option}
-        onChange={handleSelectChange}
-        className="!rounded-2xl border-none pr-2"
-      />
-    </div>
+    <section className="flex items-center justify-between py-5">
+      <DaySelector>
+        <Chip className="pl-2">Trips</Chip>
+        <Divider />
+        <Chip>Iceland</Chip>
+        <Divider />
+      </DaySelector>
+      <Button startIcon={<PlusIcon />}>Create</Button>
+    </section>
   )
 }

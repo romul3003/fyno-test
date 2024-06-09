@@ -40,6 +40,12 @@ const config: Config = {
             lineHeight: '1.312rem',
           },
         ],
+        '3xl': [
+          '1.75rem',
+          {
+            lineHeight: '2.25rem',
+          },
+        ],
       },
     },
   },

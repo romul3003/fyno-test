@@ -8,6 +8,11 @@ export const SFProText = localFont({
       style: 'normal',
     },
     {
+      path: './SFProText-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
       path: './SFProText-Bold.ttf',
       weight: '600',
       style: 'normal',
