@@ -4,7 +4,7 @@ import { Button } from '@/components/Button'
 import BookmarkIcon from '@/static/icons/bookmark.svg'
 import ShareIcon from '@/static/icons/share.svg'
 
-import avatar from '@/static/images/Avatar.jpeg'
+import avatar from '@/static/images/Avatar-min.jpeg'
 
 export const Highlights = () => {
   return (
@@ -13,10 +13,10 @@ export const Highlights = () => {
         <h2 className="text-3xl font-semibold">Iceland’s Highlights</h2>
 
         <div className="flex items-center gap-[0.625rem]">
-          <Button startIcon={<BookmarkIcon />} className="rounded-md pl-1">
+          <Button startIcon={<BookmarkIcon />} className="rounded-md pl-1 hover:bg-neutral-100">
             Add to wishlist
           </Button>
-          <Button startIcon={<ShareIcon />} className="rounded-md pl-1">
+          <Button startIcon={<ShareIcon />} className="rounded-md pl-1 hover:bg-neutral-100">
             Share
           </Button>
         </div>
@@ -26,7 +26,7 @@ export const Highlights = () => {
         <Avatar src={avatar} />
         <div>
           <p className="font-semibold">Curated by Sandra</p>
-          <p className="text-label-secondary text-sm">Fyno expert</p>
+          <p className="text-sm text-label-secondary">Fyno expert</p>
         </div>
       </div>
 

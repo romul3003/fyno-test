@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import clsx from 'clsx'
 
-import image1 from '@/static/images/gallery/image2x-1.jpeg'
-import image2 from '@/static/images/gallery/image2x-2.jpeg'
-import image3 from '@/static/images/gallery/image2x-3.jpeg'
-import image4 from '@/static/images/gallery/image2x-4.jpeg'
-import image5 from '@/static/images/gallery/image2x-5.jpeg'
+import image1 from '@/static/images/gallery/image2x-1-min.jpeg'
+import image2 from '@/static/images/gallery/image2x-2-min.jpeg'
+import image3 from '@/static/images/gallery/image2x-3-min.jpeg'
+import image4 from '@/static/images/gallery/image2x-4-min.jpeg'
+import image5 from '@/static/images/gallery/image2x-5-min.jpeg'
 import { Button } from './Button'
 
 import List from '@/static/icons/list.svg'

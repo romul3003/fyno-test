@@ -14,12 +14,15 @@ const config: Config = {
       },
       dark: 'rgba(136, 136, 136, 0.30)',
       neutral: {
-        100: 'rgba(255, 255, 255, 0.50)',
-        200: '#e5e5ea',
+        100: '#e5e5ea',
+        200: 'rgba(255, 255, 255, 0.50)',
+        300: '#9d9da1',
+        400: '#3c3c43',
       },
       label: {
         secondary: 'rgba(60, 60, 67, 0.8)',
         tertiary: 'rgba(60, 60, 67, 0.5)',
+        quaternary: 'rgba(60, 60, 67, 0.18)',
       },
       black: '#000',
       white: '#fff',
@@ -37,22 +40,34 @@ const config: Config = {
           '0px 0px 0px 0.5px rgba(151, 151, 151, 0.30), 0px 2px 3px 0px rgba(0, 0, 0, 0.03);',
       },
       fontSize: {
-        sm: [
-          '0.937rem',
+        xs: [
+          '0.812rem', // 13px
           {
-            lineHeight: '1.312rem',
+            lineHeight: '1rem', // 16px
+          },
+        ],
+        sm: [
+          '0.937rem', // 15px
+          {
+            lineHeight: '1.312rem', // 21px
           },
         ],
         xl: [
-          '1.375rem',
+          '1.25rem', // 20px
           {
-            lineHeight: '1.75rem',
+            lineHeight: '1.5rem', // 24px
+          },
+        ],
+        '2xl': [
+          '1.375rem', // 22px
+          {
+            lineHeight: '1.75rem', // 28px
           },
         ],
         '3xl': [
-          '1.75rem',
+          '1.75rem', // 28px
           {
-            lineHeight: '2.25rem',
+            lineHeight: '2.25rem', // 36px
           },
         ],
       },

@@ -15,7 +15,9 @@ export const TopPanel = () => {
         <Chip>Iceland</Chip>
         <Divider />
       </DaySelector>
-      <Button startIcon={<PlusIcon />}>Create</Button>
+      <Button startIcon={<PlusIcon />} className="hover:bg-neutral-100">
+        Create
+      </Button>
     </section>
   )
 }

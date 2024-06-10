@@ -34,7 +34,7 @@ type ItineraryProps = {
 export const Itinerary: FC<ItineraryProps> = ({ className }) => {
   return (
     <div className={className}>
-      <h3 className="mb-6 text-xl font-semibold">Iceland itinerary</h3>
+      <h3 className="mb-6 text-2xl font-semibold">Iceland itinerary</h3>
       <div className="bg-brand-50 flex gap-4 rounded-2xl p-6">
         <div className="flex grow items-center gap-1">
           <InfoBlock className="min-w-44">Reykjavík, KEF</InfoBlock>

@@ -1,11 +1,12 @@
 import { FC, ButtonHTMLAttributes, ReactNode } from 'react'
+import clsx from 'clsx'
 
-type ButtonColor = 'primary' | 'secondary' | 'neutral'
+type ButtonColor = 'primary' | 'secondary' | 'tertiary'
 
 const colors: Record<ButtonColor, string> = {
   primary: 'bg-white font-semibold',
   secondary: 'bg-dark backdrop-blur-md text-white',
-  neutral: 'bg-neutral-100',
+  tertiary: 'bg-neutral-200 backdrop-blur-md text-label-secondary',
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -25,7 +26,12 @@ export const Button: FC<ButtonProps> = ({
     <button
       {...rest}
       type={type}
-      className={`inline-flex h-8 items-center rounded-2xl pl-2 pr-3 text-sm shadow-elevation-10 ${colors[color]} ${className}`}
+      className={clsx(
+        `inline-flex h-8 items-center rounded-2xl px-3 text-sm shadow-elevation-10 transition-colors ${colors[color]} ${className}`,
+        {
+          ['pl-2']: !!startIcon,
+        },
+      )}
     >
       {!!startIcon && <span className="mr-1">{startIcon}</span>}
       {children}

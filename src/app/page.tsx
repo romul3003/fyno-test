@@ -4,6 +4,7 @@ import { Itinerary } from '@/components/Itinerary'
 import { TripInfo } from '@/views/TripInfo'
 import { Highlights } from '@/views/Highlights'
 import { TopPanel } from '@/views/TopPanel'
+import { Regions } from '@/views/Regions'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <TripInfo className="mb-7" />
         <Highlights />
         <Itinerary className="py-6" />
+        <Regions />
       </div>
     </main>
   )
