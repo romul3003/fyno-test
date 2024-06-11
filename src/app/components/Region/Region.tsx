@@ -39,7 +39,7 @@ export const Region: FC<RegionProps> = ({
         icon={<SparkleIcon />}
         title="Region highlights"
         cards={highlights}
-        hasButton
+        hasDailyPlan
         hasDecorationLine
       />
 

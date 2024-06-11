@@ -26,6 +26,7 @@ const config: Config = {
       },
       black: '#000',
       white: '#fff',
+      backdrop: 'rgba(0,0,0,0.7)',
     },
     extend: {
       backgroundImage: {

@@ -6,16 +6,7 @@ import { CSSTransition } from 'react-transition-group'
 
 import { useClickOutside } from '@/hooks/useClickOutside'
 import ChevronDownIcon from '@/static/icons/chevron-down.svg'
-
-const duration = 150
-
-const classNames = {
-  enter: 'opacity-0',
-  enterActive: 'opacity-100 transition-opacity duration-150',
-  exit: 'opacity-100',
-  exitActive: '!opacity-0 transition-opacity duration-150',
-  exitDone: 'hidden',
-}
+import { CLASS_NAMES, DURATION } from '@/constants/fadeEffect'
 
 type Option = {
   value: string
@@ -63,8 +54,8 @@ export const Select: FC<SelectProps> = ({ options, value, onChange, className = 
       <CSSTransition
         nodeRef={nodeRef}
         in={isOpen}
-        timeout={duration}
-        classNames={classNames}
+        timeout={DURATION}
+        classNames={CLASS_NAMES}
         unmountOnExit
       >
         <ul

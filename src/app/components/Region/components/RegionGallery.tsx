@@ -2,18 +2,17 @@ import { FC, ReactNode } from 'react'
 import clsx from 'clsx'
 
 import { CardTypes } from '@/types'
-import CheckListIcon from '@/static/icons/check-list.svg'
 
 import { Carousel } from '@/components/Carousel'
 import { Card } from '@/components/Card'
 import { Dot } from '@/components/Dot'
-import { Button } from '@/components/Button'
+import { DailyPlan } from './DailyPlan'
 
 type RegionGalleryProps = {
   cards: CardTypes[]
   icon: ReactNode
   title: string
-  hasButton?: boolean
+  hasDailyPlan?: boolean
   hasDecorationLine?: boolean
 }
 
@@ -24,7 +23,7 @@ export const RegionGallery: FC<RegionGalleryProps> = ({
   cards,
   icon,
   title,
-  hasButton,
+  hasDailyPlan,
   hasDecorationLine,
 }) => {
   return (
@@ -38,11 +37,7 @@ export const RegionGallery: FC<RegionGalleryProps> = ({
       </Dot>
       <div className="mb-6 flex items-center justify-between leading-8">
         <h3 className="font-semibold">{title}</h3>
-        {hasButton && (
-          <Button startIcon={<CheckListIcon />} className="rounded-lg hover:bg-neutral-100">
-            Show daily plan
-          </Button>
-        )}
+        {hasDailyPlan && <DailyPlan />}
       </div>
       <Carousel>
         {cards.map((card) => (

@@ -1,7 +1,9 @@
 'use client'
 
 import { FC, ReactNode, useState } from 'react'
-import { Select } from '@/components/Select'
+import dynamic from 'next/dynamic'
+
+const Select = dynamic(() => import('@/components/Select').then((mod) => mod.Select))
 
 const options = [
   { value: '5', label: '5 days' },

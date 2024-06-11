@@ -14,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${SFProText.className} text-base`}>
-      <body className={SFProText.variable}>{children}</body>
+      <body className={SFProText.variable}>
+        {children}
+        <div id="modal-root" />
+      </body>
     </html>
   )
 }
