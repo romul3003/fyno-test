@@ -1,29 +1,37 @@
-import { FC, ReactNode } from 'react'
+'use client'
+
+import { ChangeEvent, FC, HTMLInputTypeAttribute, ReactNode, useState } from 'react'
 import clsx from 'clsx'
 
 import PlainIcon from '@/static/icons/plain.svg'
 import CalendarIcon from '@/static/icons/calendar.svg'
 import PersonIcon from '@/static/icons/person-small.svg'
 
-type InfoBlockProps = {
-  children: ReactNode
+type InputProps = {
+  type?: HTMLInputTypeAttribute
+  value?: string | number
+  name: string
   className?: string
+  onChange?: (event: ChangeEvent<HTMLInputElement>) => void
+  placeholder?: string
   startIcon?: ReactNode
 }
 
-const InfoBlock: FC<InfoBlockProps> = ({ children, className = '', startIcon }) => {
+const Input: FC<InputProps> = ({ className, startIcon, type, ...rest }) => {
   return (
-    <div
-      className={clsx(
-        `text-label-secondary flex h-10 items-center whitespace-nowrap rounded-lg bg-white px-4 text-sm ${className}`,
-        {
-          ['pl-1']: !!startIcon,
-        },
-      )}
+    <label
+      className={`flex items-center overflow-hidden rounded-lg bg-white focus-within:outline focus-within:outline-2 focus-within:outline-primary ${className}`}
     >
-      {!!startIcon && <span className="mr-2">{startIcon}</span>}
-      {children}
-    </div>
+      <span className="">{startIcon}</span>
+      <input
+        {...rest}
+        type={type}
+        className={clsx('h-10 w-full px-4 text-sm text-label-secondary outline-none', {
+          ['pl-2']: !!startIcon,
+          ['pr-2']: type === 'number',
+        })}
+      />
+    </label>
   )
 }
 
@@ -32,18 +40,62 @@ type ItineraryProps = {
 }
 
 export const Itinerary: FC<ItineraryProps> = ({ className }) => {
+  const [value, setValue] = useState({
+    departure: '',
+    arrival: '',
+    date: '',
+    persons: '',
+  })
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const {
+      target: { name, value },
+    } = event
+
+    setValue((prevValue) => ({
+      ...prevValue,
+      [name]: value,
+    }))
+  }
+
   return (
     <div className={className}>
       <h3 className="mb-6 text-2xl font-semibold">Iceland itinerary</h3>
-      <div className="bg-brand-50 flex gap-4 rounded-2xl p-6">
+      <form className="flex gap-4 rounded-2xl bg-brand-50 p-6">
         <div className="flex grow items-center gap-1">
-          <InfoBlock className="min-w-44">Reykjavík, KEF</InfoBlock>
+          <Input
+            name="departure"
+            value={value.departure}
+            onChange={handleChange}
+            placeholder="Reykjavík, KEF"
+            className="min-w-44"
+          />
           <PlainIcon />
-          <InfoBlock className="min-w-44">San Francisco, SFO</InfoBlock>
+          <Input
+            name="arrival"
+            value={value.arrival}
+            onChange={handleChange}
+            placeholder="San Francisco, SFO"
+            className="min-w-44"
+          />
         </div>
-        <InfoBlock startIcon={<CalendarIcon />}>Jul 03 - Jul 11</InfoBlock>
-        <InfoBlock startIcon={<PersonIcon />}>2</InfoBlock>
-      </div>
+
+        <Input
+          name="date"
+          startIcon={<CalendarIcon />}
+          value={value.date}
+          onChange={handleChange}
+          placeholder="Jul 03 - Jul 11"
+        />
+        <Input
+          type="number"
+          name="persons"
+          startIcon={<PersonIcon />}
+          onChange={handleChange}
+          placeholder="2"
+          className="max-w-[64px]"
+        />
+      </form>
     </div>
   )
 }

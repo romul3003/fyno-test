@@ -24,7 +24,10 @@ export const Place: FC<PlaceProps> = ({ src, title, subtitle, isCuratorsPick }) 
       <div className="flex grow flex-col justify-center gap-1">
         <h3 className="font-semibold">{title}</h3>
         {isCuratorsPick && (
-          <Button color="quaternary" className="w-fit rounded-xl border-0 shadow-none">
+          <Button
+            color="quaternary"
+            className="w-fit rounded-xl border-0 shadow-none hover:bg-neutral-100"
+          >
             Curator’s pick
           </Button>
         )}

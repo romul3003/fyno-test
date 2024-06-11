@@ -30,7 +30,7 @@ export const DailyPlan: FC<DailyPlanProps> = ({ id }) => {
       <Button
         onClick={showModal}
         startIcon={<CheckListIcon />}
-        className="rounded-lg hover:bg-neutral-100"
+        className="hover:bg-neutral-500 rounded-lg"
       >
         Show daily plan
       </Button>
@@ -42,7 +42,7 @@ export const DailyPlan: FC<DailyPlanProps> = ({ id }) => {
           >
             <div className="flex w-full items-center justify-between bg-white py-6">
               <h3 className="font-semibold">{dailyPlanData.length} days plan</h3>
-              <Button startIcon={<SparkleIcon />} className="rounded-lg hover:bg-neutral-100">
+              <Button startIcon={<SparkleIcon />} className="hover:bg-neutral-500 rounded-lg">
                 Show highlights
               </Button>
             </div>

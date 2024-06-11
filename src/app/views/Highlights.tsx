@@ -13,10 +13,10 @@ export const Highlights = () => {
         <h2 className="text-3xl font-semibold">Iceland’s Highlights</h2>
 
         <div className="flex items-center gap-[0.625rem]">
-          <Button startIcon={<BookmarkIcon />} className="rounded-md pl-1 hover:bg-neutral-100">
+          <Button startIcon={<BookmarkIcon />} className="hover:bg-neutral-500 rounded-md pl-1">
             Add to wishlist
           </Button>
-          <Button startIcon={<ShareIcon />} className="rounded-md pl-1 hover:bg-neutral-100">
+          <Button startIcon={<ShareIcon />} className="hover:bg-neutral-500 rounded-md pl-1">
             Share
           </Button>
         </div>
