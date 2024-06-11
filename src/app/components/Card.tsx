@@ -28,6 +28,7 @@ export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPi
           className="absolute h-full w-full object-cover"
           width={216}
           height={292}
+          placeholder="blur"
         />
       </div>
 

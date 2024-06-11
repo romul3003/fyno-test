@@ -28,6 +28,7 @@ export const Avatar: FC<AvatarProps> = ({
       alt={alt}
       width={width}
       height={height}
+      placeholder="blur"
       style={{ width, height }}
       className={className}
     />

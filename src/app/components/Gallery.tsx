@@ -28,7 +28,7 @@ export const Gallery: FC<GalleryProps> = ({ className = '' }) => {
               ['col-span-2 row-span-3']: index === 0,
             })}
           >
-            <Image src={image} alt={`Image ${index + 1}`} priority />
+            <Image src={image} alt={`Image ${index + 1}`} priority placeholder="blur" />
           </li>
         ))}
       </ul>
