@@ -16,7 +16,7 @@ type DotProps = {
 export const Dot: FC<DotProps> = ({ children, className, color = 'primary' }) => {
   return (
     <div
-      className={`flex h-6 w-6 items-center justify-center rounded-full text-xs font-medium text-white ${colors[color]} ${className}`}
+      className={`flex h-6 w-6 items-center justify-center rounded-full border-2 border-solid border-white text-xs font-medium text-white ${colors[color]} ${className}`}
     >
       {children}
     </div>

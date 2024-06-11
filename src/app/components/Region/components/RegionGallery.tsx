@@ -1,45 +1,29 @@
 import { FC, ReactNode } from 'react'
-import clsx from 'clsx'
 
-import { CardTypes } from '@/types'
+import { CardType } from '@/types'
 
 import { Carousel } from '@/components/Carousel'
 import { Card } from '@/components/Card'
-import { Dot } from '@/components/Dot'
-import { DailyPlan } from './DailyPlan'
+import { DailyPlan } from '@/components/DailyPlan'
+
+import { RegionTitle } from './RegionTitle'
 
 type RegionGalleryProps = {
-  cards: CardTypes[]
+  cards: CardType[]
   icon: ReactNode
   title: string
   hasDailyPlan?: boolean
-  hasDecorationLine?: boolean
 }
 
-const decorationClasses =
-  "before:absolute before:bottom-0 before:left-[15px] before:top-8 before:w-[2px] before:bg-label-quaternary before:content-['']"
-
-export const RegionGallery: FC<RegionGalleryProps> = ({
-  cards,
-  icon,
-  title,
-  hasDailyPlan,
-  hasDecorationLine,
-}) => {
+export const RegionGallery: FC<RegionGalleryProps> = ({ cards, icon, title, hasDailyPlan }) => {
   return (
-    <div
-      className={clsx('relative pb-4 pl-12', {
-        [decorationClasses]: hasDecorationLine,
-      })}
-    >
-      <Dot color="secondary" className="absolute left-1 top-1">
-        {icon}
-      </Dot>
-      <div className="mb-6 flex items-center justify-between leading-8">
+    <div className="relative pb-4">
+      <RegionTitle icon={icon}>
         <h3 className="font-semibold">{title}</h3>
         {hasDailyPlan && <DailyPlan />}
-      </div>
-      <Carousel>
+      </RegionTitle>
+
+      <Carousel className="pl-12">
         {cards.map((card) => (
           <Card key={card.title} {...card} />
         ))}

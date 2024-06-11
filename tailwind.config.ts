@@ -18,6 +18,7 @@ const config: Config = {
         200: 'rgba(255, 255, 255, 0.50)',
         300: '#9d9da1',
         400: '#3c3c43',
+        500: '#f2f2f7',
       },
       label: {
         secondary: 'rgba(60, 60, 67, 0.8)',

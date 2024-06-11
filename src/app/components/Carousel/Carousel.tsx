@@ -9,6 +9,7 @@ import { FC, ReactNode } from 'react'
 
 type CarouselProps = {
   children: ReactNode
+  className?: string
 }
 
 const settings = {
@@ -21,9 +22,9 @@ const settings = {
   prevArrow: <PreviousArrow />,
 }
 
-export const Carousel: FC<CarouselProps> = ({ children }) => {
+export const Carousel: FC<CarouselProps> = ({ children, className }) => {
   return (
-    <div>
+    <div className={className}>
       <Slider {...settings}>{children}</Slider>
     </div>
   )

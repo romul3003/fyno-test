@@ -33,6 +33,10 @@ body {
   background-color: var(--background-main);
 }
 
+.decorative-line {
+  @apply before:absolute before:-bottom-4 before:left-[15px] before:top-0 before:w-[2px] before:bg-label-quaternary before:content-[''];
+}
+
 /* 
 @layer utilities {
   .text-balance {

@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { CardTypes } from '@/types'
+import { CardType } from '@/types'
 
 import { Button } from './Button'
 import { IconButton } from './IconButton'
@@ -9,7 +9,7 @@ import { IconButton } from './IconButton'
 import SaveIcon from '@/static/icons/save.svg'
 import RatingIcon from '@/static/icons/rating.svg'
 
-export type CardProps = CardTypes
+export type CardProps = CardType
 
 export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPick }) => {
   return (
