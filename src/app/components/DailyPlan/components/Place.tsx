@@ -29,7 +29,7 @@ export const Place: FC<PlaceProps> = ({ src, title, subtitle, isCuratorsPick }) 
           </Button>
         )}
 
-        <p>{subtitle}</p>
+        <p className="text-sm text-label-secondary">{subtitle}</p>
       </div>
 
       <div className="flex items-center">

@@ -52,7 +52,7 @@ export const Modal: FC<ModalProps> = ({
         <div className="fixed bottom-0 left-0 right-0 top-0 z-[1000] flex items-center justify-center bg-backdrop">
           <div
             ref={clickRef}
-            className={`max-h-[500px] min-h-24 w-full max-w-[754px] overflow-auto rounded-lg bg-white py-4 ${className}`}
+            className={`max-h-full min-h-24 w-full max-w-[754px] overflow-auto rounded-lg bg-white py-4 ${className}`}
           >
             <div className="pl-4 pr-6">
               {hasCloseButton && (

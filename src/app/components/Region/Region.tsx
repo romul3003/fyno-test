@@ -15,6 +15,7 @@ type RegionProps = {
   itineraryId?: string
   highlights: CardType[]
   hotels: CardType[]
+  id: string
 }
 
 export const Region: FC<RegionProps> = ({
@@ -25,6 +26,7 @@ export const Region: FC<RegionProps> = ({
   description,
   highlights,
   hotels,
+  id,
 }) => {
   return (
     <section id={itineraryId} className="pb-6 pt-3">
@@ -37,6 +39,7 @@ export const Region: FC<RegionProps> = ({
         />
 
         <RegionGallery
+          id={id}
           icon={<SparkleIcon />}
           title="Region highlights"
           cards={highlights}
