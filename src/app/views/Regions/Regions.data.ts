@@ -5,10 +5,10 @@ import image4 from '@/static/images/golden-circle/frost-and-fire-hotel-min.jpg'
 import image5 from '@/static/images/golden-circle/the-green-house-hotel-min.jpg'
 import image6 from '@/static/images/golden-circle/inni-min.jpg'
 
-import image7 from '@/static/images/south-and-highlands/Skógafoss-Waterfall-min.jpg'
+import image7 from '@/static/images/south-and-highlands/Skogafoss-Waterfall-min.jpg'
 import image8 from '@/static/images/south-and-highlands/Katla-Ice-Cave-min.jpg'
 import image9 from '@/static/images/south-and-highlands/Magma-Hotel-min.jpg'
-import image10 from '@/static/images/south-and-highlands/Hotel-Vík-í-Mýrdal-min.jpg'
+import image10 from '@/static/images/south-and-highlands/Hotel-Vik-i-Myrdal-min.jpg'
 
 export const regionData = [
   {
