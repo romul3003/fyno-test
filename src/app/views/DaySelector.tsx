@@ -30,7 +30,7 @@ export const DaySelector: FC<DaySelectorProps> = ({ children }) => {
         options={options}
         value={option}
         onChange={handleSelectChange}
-        className="!rounded-2xl border-none pr-2"
+        className="w-initial grow !rounded-2xl border-none pr-2"
       />
     </div>
   )

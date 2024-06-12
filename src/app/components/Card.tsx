@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { FC } from 'react'
 
-import { CardType } from '@/types'
+import { Highlight } from '@/types'
 
 import { Button } from './Button'
 import { IconButton } from './IconButton'
@@ -9,11 +9,11 @@ import { IconButton } from './IconButton'
 import SaveIcon from '@/static/icons/save.svg'
 import RatingIcon from '@/static/icons/rating.svg'
 
-export type CardProps = CardType
+export type CardProps = Highlight
 
 export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPick }) => {
   return (
-    <div className="relative max-w-[216px]">
+    <div className="relative">
       {isCuratorsPick && (
         <Button color="tertiary" className="hover: absolute left-4 top-4 z-10 hover:bg-white">
           Curator’s pick
@@ -21,7 +21,7 @@ export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPi
       )}
 
       <IconButton icon={<SaveIcon />} className="absolute right-3 top-4 z-10" />
-      <div className="relative aspect-[2.16/2.92] max-w-[216px] overflow-hidden rounded-2xl">
+      <div className="relative aspect-[2.16/2.92] overflow-hidden rounded-2xl">
         <Image
           src={src}
           alt={title}

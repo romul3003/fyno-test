@@ -1,6 +1,6 @@
 import { FC } from 'react'
 
-import { CardType } from '@/types'
+import { Highlight } from '@/types'
 import SparkleIcon from '@/static/icons/sparkle-small.svg'
 import BedIcon from '@/static/icons/bed-small.svg'
 
@@ -13,9 +13,8 @@ type RegionProps = {
   keyWords: string[]
   description: string
   itineraryId?: string
-  highlights: CardType[]
-  hotels: CardType[]
-  id: string
+  highlights: Highlight[]
+  hotels: Highlight[]
 }
 
 export const Region: FC<RegionProps> = ({
@@ -26,7 +25,6 @@ export const Region: FC<RegionProps> = ({
   description,
   highlights,
   hotels,
-  id,
 }) => {
   return (
     <section id={itineraryId} className="pb-6 pt-3">
@@ -39,7 +37,6 @@ export const Region: FC<RegionProps> = ({
         />
 
         <RegionGallery
-          id={id}
           icon={<SparkleIcon />}
           title="Region highlights"
           cards={highlights}

@@ -28,13 +28,13 @@ export const Button: FC<ButtonProps> = ({
       {...rest}
       type={type}
       className={clsx(
-        `inline-flex h-8 items-center rounded-2xl px-3 text-sm shadow-elevation-10 transition-colors ${colors[color]} ${className}`,
+        `inline-flex h-8 items-center gap-1 rounded-2xl px-3 text-sm shadow-elevation-10 transition-colors ${colors[color]} ${className}`,
         {
           ['pl-1']: !!startIcon,
         },
       )}
     >
-      {!!startIcon && <span className="mr-1 w-8">{startIcon}</span>}
+      {!!startIcon && <span className="w-8">{startIcon}</span>}
       {children}
     </button>
   )

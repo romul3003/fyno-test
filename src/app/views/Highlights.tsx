@@ -9,14 +9,14 @@ import avatar from '@/static/images/Avatar-min.jpeg'
 export const Highlights = () => {
   return (
     <section className="py-8">
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <h2 className="text-3xl font-semibold">Iceland’s Highlights</h2>
 
         <div className="flex items-center gap-[0.625rem]">
-          <Button startIcon={<BookmarkIcon />} className="hover:bg-neutral-500 rounded-md pl-1">
+          <Button startIcon={<BookmarkIcon />} className="rounded-md pl-1 hover:bg-neutral-500">
             Add to wishlist
           </Button>
-          <Button startIcon={<ShareIcon />} className="hover:bg-neutral-500 rounded-md pl-1">
+          <Button startIcon={<ShareIcon />} className="rounded-md pl-1 hover:bg-neutral-500">
             Share
           </Button>
         </div>

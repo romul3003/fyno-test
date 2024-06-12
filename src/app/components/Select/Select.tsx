@@ -36,7 +36,7 @@ export const Select: FC<SelectProps> = ({ options, value, onChange, className = 
   }
 
   return (
-    <div ref={clickRef} className="text-gray-700 relative inline-flex w-full">
+    <div ref={clickRef} className="text-gray-700 relative inline-flex">
       <button
         type="button"
         className={`focus:shadow-outline placeholder-gray-600 flex h-8 w-full min-w-28 items-center justify-between whitespace-nowrap rounded-lg border bg-white px-5 text-sm font-semibold ${className}`}

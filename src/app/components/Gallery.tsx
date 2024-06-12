@@ -19,13 +19,14 @@ type GalleryProps = {
 
 export const Gallery: FC<GalleryProps> = ({ className = '' }) => {
   return (
-    <div className={`relative max-h-[292px] overflow-hidden rounded-3xl ${className}`}>
-      <ul className="grid grid-cols-4 grid-rows-2 gap-1">
+    <div className={`relative overflow-hidden rounded-3xl sm:max-h-[292px] ${className}`}>
+      <ul className="grid grid-cols-4 gap-1 sm:grid-rows-2">
         {images.map((image, index) => (
           <li
             key={image.src}
             className={clsx({
-              ['col-span-2 row-span-3']: index === 0,
+              ['col-span-4 sm:col-span-2 sm:row-span-3']: index === 0,
+              ['col-span-2 sm:col-span-1']: index !== 0,
             })}
           >
             <Image src={image} alt={`Image ${index + 1}`} priority placeholder="blur" />

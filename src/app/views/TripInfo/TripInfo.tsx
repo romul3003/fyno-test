@@ -15,12 +15,12 @@ type TripInfoProps = {
 export const TripInfo: FC<TripInfoProps> = ({ className }) => {
   return (
     <section
-      className={`mb-7 grid grid-cols-[0.9fr_0.9fr_0.9fr_1.3fr] items-center gap-1 rounded-2xl p-6 shadow-elevation-10 ${className}`}
+      className={`mb-7 grid grid-cols-2 gap-1 rounded-2xl p-6 shadow-elevation-10 sm:grid-cols-[0.9fr_0.9fr_0.9fr_1.3fr] ${className}`}
     >
       {data.map(({ title, text }) => (
         <TextBlock key={title} title={title} text={text} />
       ))}
-      <Link href="#top-region" className="text-primary justify-self-end">
+      <Link href="#top-region" className="self-end text-primary sm:self-center sm:justify-self-end">
         View itinerary
       </Link>
     </section>
