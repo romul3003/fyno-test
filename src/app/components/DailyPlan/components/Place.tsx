@@ -6,15 +6,19 @@ import { Button } from '@/components/Button'
 import DragAndDropIcon from '@/static/icons/drag-and-drop.svg'
 import EllipsisDropIcon from '@/static/icons/ellipsis.svg'
 import { IconButton } from '@/components/IconButton'
+import { formatTime } from '@/utils/formatTime'
 
 export type PlaceProps = {
   title: string
   subtitle: string
   src: ImageProps['src']
   isCuratorsPick?: boolean
+  duration?: number
 }
 
-export const Place: FC<PlaceProps> = ({ src, title, subtitle, isCuratorsPick }) => {
+export const Place: FC<PlaceProps> = ({ src, title, subtitle, isCuratorsPick, duration }) => {
+  const formattedDuration = duration ? `${formatTime(duration)} · ` : ''
+
   return (
     <div className="relative z-10 flex flex-col gap-6 py-3 pl-12 before:absolute before:left-3 before:top-2/4 before:h-2 before:w-2 before:-translate-y-2/4 before:rounded-full before:border-2 before:border-white before:bg-label-quaternary before:content-[''] sm:flex-row">
       <div className="relative aspect-[9.6/13.2] shrink overflow-hidden rounded-xl sm:w-24 sm:max-w-24">
@@ -32,7 +36,10 @@ export const Place: FC<PlaceProps> = ({ src, title, subtitle, isCuratorsPick }) 
           </Button>
         )}
 
-        <p className="text-sm text-label-secondary">{subtitle}</p>
+        <p className="text-sm text-label-secondary">
+          {formattedDuration}
+          {subtitle}
+        </p>
       </div>
 
       <div className="flex items-center">

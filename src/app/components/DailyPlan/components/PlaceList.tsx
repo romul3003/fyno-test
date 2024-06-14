@@ -6,6 +6,7 @@ import EllipsisIcon from '@/static/icons/ellipsis.svg'
 
 import { Place } from './Place'
 import { Highlight } from '@/types'
+import { formatTime } from '@/utils/formatTime'
 
 type PlaceListProps = {
   places: Highlight[]
@@ -15,9 +16,7 @@ type PlaceListProps = {
 export const PlaceList: FC<PlaceListProps> = ({ places, dayNumber }) => {
   const durationSum = places.reduce((sum, place) => Number(place.duration) + sum, 0)
 
-  const totalMinutes = Math.floor(durationSum / (1000 * 60))
-  const hours = Math.floor(totalMinutes / 60)
-  const minutes = totalMinutes % 60
+  const formattedDuration = formatTime(durationSum)
 
   return (
     <div className="mb-4 last-of-type:mb-0">
@@ -26,10 +25,7 @@ export const PlaceList: FC<PlaceListProps> = ({ places, dayNumber }) => {
         <div className="flex items-center gap-2">
           <div className="flex items-center">
             <DirectionsIcon />
-            <span className="text-xs font-medium text-label-secondary">
-              {!!hours && `${hours}h `}
-              {!!minutes && `${hours}m`}
-            </span>
+            <span className="text-xs font-medium text-label-secondary">{formattedDuration}</span>
           </div>
           <IconButton icon={<EllipsisIcon />} />
         </div>
@@ -37,7 +33,7 @@ export const PlaceList: FC<PlaceListProps> = ({ places, dayNumber }) => {
 
       <ul>
         {places.map((place) => (
-          <li key={place.title}>
+          <li key={place.id}>
             <Place {...place} />
           </li>
         ))}

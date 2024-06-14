@@ -24,7 +24,7 @@ export const regionData = [
       {
         id: '1',
         title: 'Gullfoss Waterfall',
-        subtitle: '1h · Waterfall',
+        subtitle: 'Waterfall',
         src: image1,
         isCuratorsPick: true,
         day: 1,
@@ -33,7 +33,7 @@ export const regionData = [
       {
         id: '2',
         title: 'Reykjadalur Valley',
-        subtitle: '1h · Iconic hike, hot springs',
+        subtitle: 'Iconic hike, hot springs',
         src: image2,
         isCuratorsPick: true,
         day: 1,
@@ -42,7 +42,7 @@ export const regionData = [
       {
         id: '3',
         title: 'Geysir Thermal Field',
-        subtitle: '1h · Geysers',
+        subtitle: 'Geysers',
         src: image3,
         day: 2,
         duration: 1000 * 60 * 60, // 1h
@@ -50,10 +50,10 @@ export const regionData = [
       {
         id: '4',
         title: 'Thingvellir',
-        subtitle: '1h · Iconic hike · Light traffic ',
+        subtitle: 'Iconic hike · Light traffic ',
         src: image11,
         day: 2,
-        duration: 1000 * 60 * 60, // 1h
+        duration: 1000 * 60 * 40, // 40m
       },
       {
         id: '5',
@@ -113,7 +113,7 @@ export const regionData = [
       {
         id: '1',
         title: 'Skógafoss Waterfall',
-        subtitle: '1h · Iconic waterfall',
+        subtitle: 'Iconic waterfall',
         src: image7,
         isCuratorsPick: true,
         day: 1,
@@ -122,7 +122,7 @@ export const regionData = [
       {
         id: '2',
         title: 'Katla Ice Cave',
-        subtitle: '1h · Ice caves',
+        subtitle: 'Ice caves',
         src: image8,
         isCuratorsPick: true,
         day: 1,
@@ -131,7 +131,7 @@ export const regionData = [
       {
         id: '3',
         title: 'Fjaðrárgljúfur',
-        subtitle: '1h · Geysers',
+        subtitle: 'Geysers',
         src: image3,
         day: 2,
         duration: 1000 * 60 * 60, // 1h

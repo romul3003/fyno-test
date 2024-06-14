@@ -8,10 +8,13 @@ import { IconButton } from './IconButton'
 
 import SaveIcon from '@/static/icons/save.svg'
 import RatingIcon from '@/static/icons/rating.svg'
+import { formatTime } from '@/utils/formatTime'
 
 export type CardProps = Highlight
 
-export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPick }) => {
+export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPick, duration }) => {
+  const formattedDuration = duration ? `${formatTime(duration)} · ` : ''
+
   return (
     <div className="relative">
       {isCuratorsPick && (
@@ -39,7 +42,10 @@ export const Card: FC<CardProps> = ({ src, title, subtitle, rating, isCuratorsPi
             <RatingIcon /> {`${rating}/10`}
           </p>
         )}
-        <p className="text-sm text-label-secondary">{subtitle}</p>
+        <p className="text-sm text-label-secondary">
+          {formattedDuration}
+          {subtitle}
+        </p>
       </div>
     </div>
   )
